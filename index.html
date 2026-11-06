@@ -74,6 +74,8 @@
     .paper-illustration { display: block; width: 100%; aspect-ratio: 2 / 1; border: 1px solid var(--line); border-radius: 4px; }
     @media (max-width: 1000px) { .selected-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
     .paper-card { min-width: 0; }
+    img.paper-illustration { height: auto; aspect-ratio: 2 / 1; object-fit: contain; background: #fff; }
+    .paper-links { display: flex; flex-wrap: wrap; gap: .25rem .75rem; font-size: .85rem; }
     .tool-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
     .teaching-tools { margin-bottom: 1.4rem; }
     .teaching-tools > .heading-row { margin-bottom: .55rem; }
@@ -156,7 +158,7 @@
       h1 { font-size: clamp(1.95rem, 7vw, 2.45rem); }
       .paper-grid, .project-grid, .note-grid, .about-grid { grid-template-columns: 1fr; }
       .paper-card { display: grid; grid-template-columns: 32% minmax(0, 1fr); align-items: start; gap: .75rem; }
-      .paper-card img, .paper-illustration { aspect-ratio: 4 / 3; }
+      .paper-card img, .paper-illustration, img.paper-illustration { aspect-ratio: 4 / 3; }
       .tool-grid { grid-template-columns: 1fr; }
       .tool-card svg { aspect-ratio: 4 / 3; }
       .paper-card h3, .tool-card h4 { margin-top: 0; }
@@ -286,6 +288,45 @@
         </div>
         <h3 class="section-subhead">Research methods and figures</h3>
         <div class="note-grid">
+          <details class="research-note" id="method-hybrid-regression-quark-matter">
+            <summary>Hybrid regression for two-flavour quark matter</summary>
+            <div class="research-note-body">
+              <p>SHAP-guided feature selection and a Gaussian mixture model help distinguish crossover and first-order transitions. Multilayer perceptrons classify phases and predict transition temperatures. Kernel ridge regression refines the phase boundary.</p>
+              <p class="paper-links"><a href="#hybrid-regression-quark-matter">Publication details</a> <a href="https://doi.org/10.1016/j.jspc.2025.100247">Publisher article</a></p>
+              <figure class="research-figure">
+                <a href="assets/research/quark-matter-graphical-abstract.png" aria-label="Open full-size figure for Hybrid regression for two-flavour quark matter">
+                  <img src="assets/research/quark-matter-graphical-abstract.png" alt="Four-stage workflow for classifying transition order and quark-matter phases, predicting transition temperatures and estimating the phase boundary" width="454" height="200" loading="lazy" decoding="async">
+                </a>
+                <figcaption>Graphical abstract. From transition-order classification to phase-boundary estimation and identification of a possible second-order transition region.</figcaption>
+              </figure>
+            </div>
+          </details>
+          <details class="research-note" id="method-deep-facial-feature-fusion">
+            <summary>Deep facial feature fusion and voting</summary>
+            <div class="research-note-body">
+              <p>Four feature representations from fine-tuned VGG-19 layers are reduced using principal component analysis. The final expression label is chosen by voting across the layer-specific predictions.</p>
+              <p class="paper-links"><a href="#deep-facial-feature-fusion">Publication details</a> <a href="papers/deep-facial-feature-fusion.pdf">Full paper (PDF)</a></p>
+              <figure class="research-figure">
+                <a href="assets/research/deep-facial-feature-fusion-fig-1.png" aria-label="Open full-size figure for Deep facial feature fusion and voting">
+                  <img src="assets/research/deep-facial-feature-fusion-fig-1.png" alt="Training and testing workflow showing four VGG-19 feature layers, subspace projection and maximum voting" width="782" height="445" loading="lazy" decoding="async">
+                </a>
+                <figcaption>Figure 1. VGG-19 fine-tuning and the testing pipeline for seven- and eight-class facial expression recognition. Source: Panja et al., Procedia Computer Science (2025). <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/">CC BY-NC-ND 4.0</a>.</figcaption>
+              </figure>
+            </div>
+          </details>
+          <details class="research-note" id="method-phase-autoencoders">
+            <summary>Phase-encoded autoencoders and correlation filters</summary>
+            <div class="research-note-body">
+              <p>Cascaded autoencoders learn compact phase representations for class-specific correlation filters. Kernel density estimates of peak-to-sidelobe ratios set adaptive decision thresholds for recognising faces under changing illumination.</p>
+              <p class="paper-links"><a href="#phase-autoencoders">Publication details</a> <a href="https://doi.org/10.1007/978-3-031-78383-8_12">Chapter at Springer</a></p>
+              <figure class="research-figure">
+                <a href="assets/research/phase-autoencoders-fig-2.png" aria-label="Open full-size figure for Phase-encoded autoencoders and correlation filters">
+                  <img src="assets/research/phase-autoencoders-fig-2.png" alt="Block diagram of the phase-encoded autoencoder and correlation filter, with training arrows in blue and test arrows in red" width="686" height="711" loading="lazy" decoding="async">
+                </a>
+                <figcaption>Figure 2. Training and testing stages of the phase-encoded correlation filter. Source: Banerjee, Springer LNCS 15324 (2025).</figcaption>
+              </figure>
+            </div>
+          </details>
           <details class="research-note">
             <summary>Unconstrained video filtering for face localisation</summary>
             <div class="research-note-body">
@@ -370,6 +411,33 @@
         </header>
         <div class="paper-grid selected-grid">
           <article class="paper-card">
+            <img class="paper-illustration" src="assets/research/quark-matter-graphical-abstract.png" alt="Four-stage workflow for classifying transition order and quark-matter phases, predicting transition temperatures and estimating the phase boundary" width="454" height="200" loading="lazy" decoding="async">
+            <div>
+              <h3><a href="https://doi.org/10.1016/j.jspc.2025.100247">Hybrid regression and explainable AI for phase transition analysis of two-flavour quark matter</a></h3>
+              <p class="muted">Pradipta K. Banerjee and Tamal K. Mukherjee</p>
+              <p class="paper-meta"><time datetime="2025">2025</time> · Journal of Subatomic Particles and Cosmology 4, article 100247</p>
+              <p class="paper-links"><a href="#method-hybrid-regression-quark-matter">Methods and figure</a></p>
+            </div>
+          </article>
+          <article class="paper-card">
+            <img class="paper-illustration" src="assets/research/deep-facial-feature-fusion-fig-1.png" alt="Training and testing workflow showing four VGG-19 feature layers, subspace projection and maximum voting" width="782" height="445" loading="lazy" decoding="async">
+            <div>
+              <h3><a href="https://doi.org/10.1016/j.procs.2025.03.218">Deep Facial Feature Fusion and Voting Strategies for Enhanced Emotion Recognition</a></h3>
+              <p class="muted">Soumya Panja, Akash Halder, Shatoparna Bhattacharya, Pradipta K. Banerjee, Pratik Mahato and Debosmita Chakraborty</p>
+              <p class="paper-meta"><time datetime="2025">2025</time> · Procedia Computer Science 260, pp. 415–423</p>
+              <p class="paper-links"><a href="#method-deep-facial-feature-fusion">Methods and figure</a> <a href="papers/deep-facial-feature-fusion.pdf">Full paper (PDF)</a></p>
+            </div>
+          </article>
+          <article class="paper-card">
+            <img class="paper-illustration" src="assets/research/phase-autoencoders-fig-2.png" alt="Block diagram of the phase-encoded autoencoder and correlation filter, with training arrows in blue and test arrows in red" width="686" height="711" loading="lazy" decoding="async">
+            <div>
+              <h3><a href="https://doi.org/10.1007/978-3-031-78383-8_12">Phase-Encoded Cascaded Autoencoders based Correlation Filters and Adaptive Thresholding for Illumination Invariant Face Recognition</a></h3>
+              <p class="muted">Pradipta K. Banerjee</p>
+              <p class="paper-meta"><time datetime="2025">2025</time> · ICPR 2024, Springer LNCS 15324, pp. 173–189</p>
+              <p class="paper-links"><a href="#method-phase-autoencoders">Methods and figure</a></p>
+            </div>
+          </article>
+          <article class="paper-card">
             <svg class="paper-illustration" aria-hidden="true" focusable="false" viewBox="0 0 320 160" xmlns="http://www.w3.org/2000/svg" style="background:#fff5dc"><g font-family="system-ui,sans-serif" font-size="13" fill="#3f3742">
       <path d="M43 31v106h237" stroke="#ab9c87" stroke-width="2" fill="none"/>
       <path d="M57 49h44v22h45v22h47v20h70" stroke="#ad781e" stroke-width="3" fill="none"/>
@@ -381,53 +449,6 @@
               <h3><a href="https://link.springer.com/chapter/10.1007/978-981-95-3492-0_5">Impact of Learning Rate Schedulers on ResNet Optimization for Facial Emotion Recognition</a></h3>
               <p class="muted">Debosmita Chakraborty, Pradipta K. Banerjee and Sumona Datta</p>
               <p class="paper-meta"><time datetime="2026">2026</time> · Proceedings of International Conference on Communication and Computational Technologies (ICCCT 2025), Springer LNNS 1672, pp. 51–64</p>
-            </div>
-          </article>
-          <article class="paper-card">
-            <svg class="paper-illustration" aria-hidden="true" focusable="false" viewBox="0 0 320 160" xmlns="http://www.w3.org/2000/svg" style="background:#edf4ed"><g font-family="system-ui,sans-serif" font-size="13" fill="#3f3742">
-      <path d="M25 141Q84 111 127 77T296 34V149H25Z" fill="#e2d9eb"/>
-      <path d="M25 141Q84 111 127 77T296 34" fill="none" stroke="#6d5e86" stroke-width="4" stroke-dasharray="7 5"/>
-      <path d="M187 110 162 80" stroke="#61566f" stroke-width="2"/>
-      <text x="168" y="130">Phase boundary</text>
-    </g></svg>
-            <div>
-              <h3><a href="https://doi.org/10.1016/j.jspc.2025.100247">Hybrid regression and explainable AI for phase transition analysis of two-flavour quark matter</a></h3>
-              <p class="muted">Pradipta K. Banerjee and Tamal K. Mukherjee</p>
-              <p class="paper-meta"><time datetime="2025">2025</time> · Journal of Subatomic Particles and Cosmology 4, article 100247</p>
-            </div>
-          </article>
-          <article class="paper-card">
-            <svg class="paper-illustration" aria-hidden="true" focusable="false" viewBox="0 0 320 160" xmlns="http://www.w3.org/2000/svg" style="background:#f3ebf6"><g font-family="system-ui,sans-serif" font-size="13" fill="#3f3742">
-      <g fill="#e1d5ed" stroke="#79688c" stroke-width="2">
-        <rect x="22" y="39" width="76" height="29" rx="4"/><rect x="22" y="75" width="76" height="29" rx="4"/>
-        <rect x="22" y="111" width="76" height="29" rx="4"/>
-      </g>
-      <path d="M98 54h17l20 36m-37 0h37m-37 35h17l20-35m74 0h21" stroke="#61566f" stroke-width="2" fill="none"/>
-      <rect x="135" y="70" width="74" height="40" rx="5" fill="#f7dc97" stroke="#9b7028"/>
-      <rect x="230" y="70" width="70" height="40" rx="5" fill="#dceae3" stroke="#54796d"/>
-      <text x="60" y="58" text-anchor="middle">Feature 1</text><text x="60" y="94" text-anchor="middle">Feature 2</text>
-      <text x="60" y="130" text-anchor="middle">Feature 3</text><text x="172" y="95" text-anchor="middle">Fusion</text>
-      <text x="265" y="95" text-anchor="middle">Voting</text>
-    </g></svg>
-            <div>
-              <h3><a href="https://doi.org/10.1016/j.procs.2025.03.218">Deep Facial Feature Fusion and Voting Strategies for Enhanced Emotion Recognition</a></h3>
-              <p class="muted">Soumya Panja, Akash Halder, Shatoparna Bhattacharya, Pradipta K. Banerjee, Pratik Mahato and Debosmita Chakraborty</p>
-              <p class="paper-meta"><time datetime="2025">2025</time> · Procedia Computer Science 260, pp. 415–423</p>
-            </div>
-          </article>
-          <article class="paper-card">
-            <svg class="paper-illustration" aria-hidden="true" focusable="false" viewBox="0 0 320 160" xmlns="http://www.w3.org/2000/svg" style="background:#eef2f8"><g font-family="system-ui,sans-serif" font-size="13" fill="#3f3742">
-      <path d="M21 85q10-28 20 0t20 0t20 0m5 0h24m96 0h25" fill="none" stroke="#6d5e86" stroke-width="3"/>
-      <rect x="110" y="64" width="96" height="42" rx="5" fill="#f7dc97" stroke="#9b7028"/>
-      <path d="M233 105h70m-70-43v43m2-5 20-2 10-30 10 31 24 1" fill="none" stroke="#477666" stroke-width="2.5"/>
-      <text x="47" y="130" text-anchor="middle">Phase</text>
-      <text x="158" y="90" text-anchor="middle">Autoencoders</text>
-      <text x="263" y="130" text-anchor="middle">Correlation</text>
-    </g></svg>
-            <div>
-              <h3><a href="https://doi.org/10.1007/978-3-031-78383-8_12">Phase-Encoded Cascaded Autoencoders based Correlation Filters and Adaptive Thresholding for Illumination Invariant Face Recognition</a></h3>
-              <p class="muted">Pradipta K. Banerjee</p>
-              <p class="paper-meta"><time datetime="2024">2024</time> · ICPR 2024, Springer LNCS 15324, pp. 173–189</p>
             </div>
           </article>
         </div>
@@ -457,6 +478,7 @@
             <div>
               <a href="https://doi.org/10.1016/j.jspc.2025.100247"><cite>Hybrid regression and explainable AI for phase transition analysis of two-flavour quark matter</cite></a>
               <p class="muted">Pradipta K. Banerjee and Tamal K. Mukherjee · Journal of Subatomic Particles and Cosmology 4, article 100247</p>
+              <p class="paper-links"><a href="#method-hybrid-regression-quark-matter">Methods and figure</a></p>
             </div>
           </li>
           <li id="deep-facial-feature-fusion" data-kind="Conference paper">
@@ -464,13 +486,15 @@
             <div>
               <a href="https://doi.org/10.1016/j.procs.2025.03.218"><cite>Deep Facial Feature Fusion and Voting Strategies for Enhanced Emotion Recognition</cite></a>
               <p class="muted">Soumya Panja, Akash Halder, Shatoparna Bhattacharya, Pradipta K. Banerjee, Pratik Mahato and Debosmita Chakraborty · Procedia Computer Science 260, pp. 415–423</p>
+              <p class="paper-links"><a href="#method-deep-facial-feature-fusion">Methods and figure</a> <a href="papers/deep-facial-feature-fusion.pdf">Full paper (PDF)</a></p>
             </div>
           </li>
           <li id="phase-autoencoders" data-kind="Conference paper">
-            <time datetime="2024">2024</time>
+            <time datetime="2025">2025</time>
             <div>
               <a href="https://doi.org/10.1007/978-3-031-78383-8_12"><cite>Phase-Encoded Cascaded Autoencoders based Correlation Filters and Adaptive Thresholding for Illumination Invariant Face Recognition</cite></a>
               <p class="muted">Pradipta K. Banerjee · ICPR 2024, Springer LNCS 15324, pp. 173–189</p>
+              <p class="paper-links"><a href="#method-phase-autoencoders">Methods and figure</a></p>
             </div>
           </li>
           <li id="emotion-correlation" data-kind="Conference paper">
@@ -842,8 +866,13 @@
       toggle.setAttribute('aria-expanded', String(expanded));
     }
 
-    function revealLinkedPublication() {
+    function revealLinkedContent() {
       const publication = document.getElementById(location.hash.slice(1));
+      if (publication?.matches('details.research-note')) {
+        publication.open = true;
+        publication.scrollIntoView();
+        return;
+      }
       if (!publication?.matches('.publication-list li')) return;
       if (publication.hidden) {
         if (publications.indexOf(publication) >= previewCount) expanded = true;
@@ -860,12 +889,12 @@
     });
     document.querySelector('main').addEventListener('click', event => {
       const link = event.target.closest('a[href^="#"]');
-      if (link && link.hash === location.hash) revealLinkedPublication();
+      if (link && link.hash === location.hash) revealLinkedContent();
     });
-    window.addEventListener('hashchange', revealLinkedPublication);
+    window.addEventListener('hashchange', revealLinkedContent);
     controls.hidden = false;
     renderPublications();
-    revealLinkedPublication();
+    revealLinkedContent();
   </script>
 </body>
 </html>
