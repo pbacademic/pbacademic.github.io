@@ -78,9 +78,8 @@
     .tool-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
     .teaching-tools { margin-bottom: 1.4rem; }
     .teaching-tools > .heading-row { margin-bottom: .55rem; }
-    .tool-card { display: block; text-decoration: none; }
+    .tool-grid .tool-card { display: block; text-decoration: none; }
     .tool-card:hover h4, .tool-card:focus-visible h4 { text-decoration: underline; }
-    .tool-card svg { display: block; width: 100%; max-height: 12rem; aspect-ratio: 2 / 1; background: #fffaf0; border: 1px solid var(--line); border-radius: 4px; }
     .tool-note { color: var(--muted); font-size: .82rem; }
     .paper-card img { display: block; width: 100%; aspect-ratio: 2 / 1; object-fit: contain; background: #fff; border: 1px solid var(--line); border-radius: 4px; }
     .paper-card h3, .tool-card h4 { margin: .6rem 0 .33rem; font: 700 1.14rem/1.22 var(--serif); }
@@ -91,12 +90,11 @@
     .course-grid, .resource-list { list-style: none; padding: 0; margin: 0; }
     .course-grid, .project-grid, .note-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     .course-grid { gap: 1rem 1.4rem; }
-    .course-banner { --tile: #28242b; --tile-ink: #ffd34e; display: flex; align-items: center; justify-content: space-between; gap: .7rem; min-height: 6.3rem; padding: .65rem 1rem; overflow: hidden; border: 1px solid #342d2b24; border-radius: 4px; color: var(--tile-ink); background: var(--tile); }
+    .course-banner { --tile: #28242b; --tile-ink: #ffd34e; display: flex; align-items: center; min-height: 6.3rem; padding: .65rem 1rem; overflow: hidden; border: 1px solid #342d2b24; border-radius: 4px; color: var(--tile-ink); background: var(--tile); }
     .course-grid li:nth-child(4n + 2) .course-banner { --tile: #f5dc9e; --tile-ink: #392c23; }
     .course-grid li:nth-child(4n + 3) .course-banner { --tile: #3e3331; --tile-ink: #ffe2a2; }
     .course-grid li:nth-child(4n + 4) .course-banner { --tile: #f2e7d1; --tile-ink: #433632; }
     .course-banner span { font: 400 clamp(1rem, 2.3vw, 1.7rem)/1.08 var(--serif); }
-    .course-banner svg { flex: 0 1 55%; width: 55%; min-width: 4.6rem; height: 4.8rem; }
     .course-grid h3 { margin: .48rem 0 .12rem; font: 700 1.14rem/1.2 var(--serif); }
     .course-grid p { font-size: .82rem; }
     .course-link { display: block; text-decoration: none; }
@@ -159,17 +157,16 @@
       .paper-card { display: grid; grid-template-columns: 32% minmax(0, 1fr); align-items: start; gap: .75rem; }
       .paper-card img, .paper-illustration, img.paper-illustration { aspect-ratio: 4 / 3; }
       .tool-grid { grid-template-columns: 1fr; }
-      .tool-card svg { aspect-ratio: 4 / 3; }
-      .paper-card h3, .tool-card h4 { margin-top: 0; }
-      .course-banner { min-height: 4.8rem; padding: .45rem .55rem; gap: .25rem; }
-      .course-banner svg { height: 3.5rem; min-width: 2.8rem; }
+      .tool-card img { aspect-ratio: 2 / 1; }
+      .tool-card h4 { margin-top: .6rem; }
+      .paper-card h3 { margin-top: 0; }
+      .course-banner { min-height: 4.8rem; padding: .45rem .55rem; }
       .course-grid h3 { font-size: 1rem; }
       .publication-list li { grid-template-columns: 2.6rem minmax(0, 1fr); gap: .45rem; }
     }
     @media (max-width: 360px) {
       .wrap { width: calc(100% - 1.5rem); }
       .hero-inner { grid-template-columns: minmax(0, 1fr) 4.6rem; }
-      .course-banner svg { flex-basis: 38%; min-width: 2.1rem; }
     }
   </style>
 </head>
@@ -720,21 +717,21 @@
           </div>
         <div class="paper-grid tool-grid">
           <a class="paper-card tool-card" href="https://pbacademic-teaching.pradiptak-banerjee.workers.dev/teaching/materials/interactive-tools/k-means.html">
-            <svg aria-hidden="true" focusable="false" viewBox="0 0 420 225" xmlns="http://www.w3.org/2000/svg"><path d="M47 35v165h325M47 76h325M47 117h325M47 158h325M115 35v165m68-165v165m68-165v165m68-165v165" fill="none" stroke="#e9deca" stroke-width="2"/><path d="M47 35v165h325" fill="none" stroke="#a39482" stroke-width="2"/><ellipse cx="109" cy="83" rx="44" ry="37" fill="#956317" fill-opacity=".08" stroke="#956317" stroke-opacity=".44" stroke-width="2" stroke-dasharray="5 5"/><ellipse cx="222" cy="159" rx="44" ry="37" fill="#706184" fill-opacity=".08" stroke="#706184" stroke-opacity=".44" stroke-width="2" stroke-dasharray="5 5"/><ellipse cx="324" cy="76" rx="44" ry="37" fill="#447569" fill-opacity=".08" stroke="#447569" stroke-opacity=".44" stroke-width="2" stroke-dasharray="5 5"/><g fill="#956317"><circle cx="80" cy="70" r="5"/><circle cx="103" cy="54" r="5"/><circle cx="108" cy="85" r="5"/><circle cx="128" cy="65" r="5"/><circle cx="141" cy="97" r="5"/><circle cx="86" cy="101" r="5"/><circle cx="118" cy="112" r="5"/></g><g fill="#706184"><circle cx="192" cy="156" r="5"/><circle cx="216" cy="133" r="5"/><circle cx="232" cy="150" r="5"/><circle cx="240" cy="176" r="5"/><circle cx="202" cy="184" r="5"/><circle cx="259" cy="153" r="5"/><circle cx="214" cy="163" r="5"/></g><g fill="#447569"><circle cx="291" cy="54" r="5"/><circle cx="318" cy="76" r="5"/><circle cx="333" cy="53" r="5"/><circle cx="347" cy="86" r="5"/><circle cx="305" cy="106" r="5"/><circle cx="321" cy="95" r="5"/><circle cx="357" cy="66" r="5"/></g><path d="M101 83h16m-8 -8v16" fill="none" stroke="#fffdf8" stroke-width="8" stroke-linecap="round"/><path d="M101 83h16m-8 -8v16" fill="none" stroke="#28252a" stroke-width="3" stroke-linecap="round"/><path d="M214 159h16m-8 -8v16" fill="none" stroke="#fffdf8" stroke-width="8" stroke-linecap="round"/><path d="M214 159h16m-8 -8v16" fill="none" stroke="#28252a" stroke-width="3" stroke-linecap="round"/><path d="M316 76h16m-8 -8v16" fill="none" stroke="#fffdf8" stroke-width="8" stroke-linecap="round"/><path d="M316 76h16m-8 -8v16" fill="none" stroke="#28252a" stroke-width="3" stroke-linecap="round"/></svg>
+            <img src="assets/teaching/k-means-preview.png" alt="" width="1516" height="748" loading="lazy" decoding="async">
             <div>
               <h4>K-Means</h4>
               <p class="muted">Step through assignments and centroid updates, then use the elbow plot to explore the choice of K.</p>
             </div>
           </a>
           <a class="paper-card tool-card" href="https://pbacademic-teaching.pradiptak-banerjee.workers.dev/teaching/materials/interactive-tools/k-means-plusplus.html">
-            <svg aria-hidden="true" focusable="false" viewBox="0 0 420 225" xmlns="http://www.w3.org/2000/svg"><path d="M47 35v165h325M47 76h325M47 117h325M47 158h325M115 35v165m68-165v165m68-165v165m68-165v165" fill="none" stroke="#e9deca" stroke-width="2"/><path d="M47 35v165h325" fill="none" stroke="#a39482" stroke-width="2"/><circle cx="103" cy="54" r="16" fill="#ffd34e" fill-opacity=".22" stroke="#ab7c29" stroke-width="2" stroke-dasharray="4 4"/><circle cx="259" cy="153" r="16" fill="#ffd34e" fill-opacity=".22" stroke="#ab7c29" stroke-width="2" stroke-dasharray="4 4"/><circle cx="357" cy="66" r="16" fill="#ffd34e" fill-opacity=".22" stroke="#ab7c29" stroke-width="2" stroke-dasharray="4 4"/><g fill="#81788a"><circle cx="80" cy="70" r="5"/><circle cx="103" cy="54" r="5"/><circle cx="108" cy="85" r="5"/><circle cx="128" cy="65" r="5"/><circle cx="141" cy="97" r="5"/><circle cx="86" cy="101" r="5"/><circle cx="118" cy="112" r="5"/></g><g fill="#81788a"><circle cx="192" cy="156" r="5"/><circle cx="216" cy="133" r="5"/><circle cx="232" cy="150" r="5"/><circle cx="240" cy="176" r="5"/><circle cx="202" cy="184" r="5"/><circle cx="259" cy="153" r="5"/><circle cx="214" cy="163" r="5"/></g><g fill="#81788a"><circle cx="291" cy="54" r="5"/><circle cx="318" cy="76" r="5"/><circle cx="333" cy="53" r="5"/><circle cx="347" cy="86" r="5"/><circle cx="305" cy="106" r="5"/><circle cx="321" cy="95" r="5"/><circle cx="357" cy="66" r="5"/></g><circle cx="103" cy="54" r="7.5" fill="#ffd34e" stroke="#28252a" stroke-width="2"/><circle cx="259" cy="153" r="7.5" fill="#ffd34e" stroke="#28252a" stroke-width="2"/><circle cx="357" cy="66" r="7.5" fill="#ffd34e" stroke="#28252a" stroke-width="2"/></svg>
+            <img src="assets/teaching/k-means-plusplus-preview.png" alt="" width="1516" height="748" loading="lazy" decoding="async">
             <div>
               <h4>K-Means++</h4>
               <p class="muted">Compare K-Means++ seeding with random initialisation on the same data and track how the clustering loss changes.</p>
             </div>
           </a>
           <a class="paper-card tool-card" href="https://pbacademic-teaching.pradiptak-banerjee.workers.dev/teaching/materials/interactive-tools/perceptron.html">
-            <svg aria-hidden="true" focusable="false" viewBox="0 0 420 225" xmlns="http://www.w3.org/2000/svg"><path d="M47 35v165h325M47 76h325M47 117h325M47 158h325M115 35v165m68-165v165m68-165v165m68-165v165" fill="none" stroke="#e9deca" stroke-width="2"/><path d="M47 35v165h325" fill="none" stroke="#a39482" stroke-width="2"/><path d="M145 35 308 200" stroke="#b48426" stroke-width="3"/><g fill="#706184"><circle cx="79" cy="152" r="6"/><circle cx="124" cy="170" r="6"/><circle cx="149" cy="126" r="6"/><circle cx="164" cy="156" r="6"/><circle cx="201" cy="186" r="6"/><circle cx="193" cy="135" r="6"/><circle cx="111" cy="116" r="6"/></g><g fill="#447569"><circle cx="229" cy="68" r="6"/><circle cx="278" cy="71" r="6"/><circle cx="301" cy="103" r="6"/><circle cx="315" cy="55" r="6"/><circle cx="342" cy="92" r="6"/><circle cx="327" cy="123" r="6"/><circle cx="251" cy="117" r="6"/></g></svg>
+            <img src="assets/teaching/perceptron-preview.png" alt="" width="1516" height="762" loading="lazy" decoding="async">
             <div>
               <h4>Perceptron</h4>
               <p class="muted">Step through weight and bias updates and watch the decision boundary move as the classifier learns.</p>
@@ -746,7 +743,6 @@
           <li>
             <a class="course-link" href="https://pbacademic-teaching.pradiptak-banerjee.workers.dev/teaching/machine-learning/"><div class="course-banner" aria-hidden="true">
               <span>Learning from data</span>
-              <svg viewBox="0 0 190 86" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"><path d="M22 16v54h151M39 65l111-47" opacity=".65"/><g fill="currentColor" stroke="none"><circle cx="56" cy="28" r="4"/><circle cx="79" cy="31" r="4"/><circle cx="101" cy="23" r="4"/><circle cx="96" cy="56" r="4"/><circle cx="124" cy="49" r="4"/><circle cx="147" cy="58" r="4"/></g></svg>
             </div>
             <h3>Machine Learning</h3></a>
             <p class="muted">PCCAIML502<br><a href="https://pbacademic-teaching.pradiptak-banerjee.workers.dev/teaching/machine-learning-lab/">Machine Learning Lab</a> · PCCAIML592</p>
@@ -754,7 +750,6 @@
           <li>
             <a class="course-link" href="https://pbacademic-teaching.pradiptak-banerjee.workers.dev/teaching/machine-learning-applications/"><div class="course-banner" aria-hidden="true">
               <span>From data to models</span>
-              <svg viewBox="0 0 190 86" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"><rect x="15" y="27" width="34" height="32" rx="4"/><rect x="77" y="20" width="34" height="46" rx="4"/><rect x="139" y="27" width="34" height="32" rx="4"/><path d="M49 43h28m-8-6 8 6-8 6m42-6h28m-8-6 8 6-8 6M23 49l7-10 8 4 4-9m42 18 8-10 6 6 6-13m43 15 7 4 12-16"/></svg>
             </div>
             <h3>Machine Learning Applications</h3></a>
             <p class="muted">PCCAIML601<br><a href="https://pbacademic-teaching.pradiptak-banerjee.workers.dev/teaching/machine-learning-applications-lab/">Machine Learning Applications Lab</a> · PCCAIML691</p>
@@ -762,7 +757,6 @@
           <li>
             <a class="course-link" href="https://pbacademic-teaching.pradiptak-banerjee.workers.dev/teaching/deep-learning/"><div class="course-banner" aria-hidden="true">
               <span>Neural networks</span>
-              <svg viewBox="0 0 190 86" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"><path d="M32 27l63-10m-63 10 63 17M32 27l63 44M32 59l63-42M32 59l63-15M32 59l63 12m0-54 63 26M95 44l63-1m-63 28 63-28" opacity=".55"/><g fill="currentColor" stroke="none"><circle cx="32" cy="27" r="6"/><circle cx="32" cy="59" r="6"/><circle cx="95" cy="17" r="6"/><circle cx="95" cy="44" r="6"/><circle cx="95" cy="71" r="6"/><circle cx="158" cy="43" r="6"/></g></svg>
             </div>
             <h3>Deep Learning</h3></a>
             <p class="muted">PCCAIML602</p>
@@ -770,7 +764,6 @@
           <li>
             <a class="course-link" href="https://pbacademic-teaching.pradiptak-banerjee.workers.dev/teaching/pattern-recognition/"><div class="course-banner" aria-hidden="true">
               <span>Features and classes</span>
-              <svg viewBox="0 0 190 86" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"><ellipse cx="53" cy="31" rx="30" ry="20" opacity=".5"/><ellipse cx="131" cy="55" rx="34" ry="20" opacity=".5"/><g fill="currentColor" stroke="none"><circle cx="43" cy="34" r="4"/><circle cx="63" cy="27" r="4"/><circle cx="54" cy="20" r="4"/></g><path d="M114 53l7-7 7 7-7 7zm19 8 7-7 7 7-7 7zm2-17 6-6 6 6-6 6z"/></svg>
             </div>
             <h3>Pattern Recognition</h3></a>
             <p class="muted">PCCAIML501B</p>
@@ -778,7 +771,6 @@
           <li>
             <a class="course-link" href="https://pbacademic-teaching.pradiptak-banerjee.workers.dev/teaching/computer-vision/"><div class="course-banner" aria-hidden="true">
               <span>Images and features</span>
-              <svg viewBox="0 0 190 86" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"><rect x="35" y="11" width="116" height="64" rx="5"/><path d="M43 63l29-26 22 17 16-11 33 20" opacity=".65"/><circle cx="119" cy="30" r="8" opacity=".65"/><path d="M65 29H53v12m62-12h12v12M53 50v12h12m62-12v12h-12"/></svg>
             </div>
             <h3>Computer Vision</h3></a>
             <p class="muted">PECAIML 701B</p>
