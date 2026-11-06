@@ -108,9 +108,39 @@
     .project-tag { margin-bottom: .25rem; color: #6e501f; font-size: .72rem; font-weight: 730; }
     .project p:last-child, .research-note-body p { font-size: .89rem; }
     .section-subhead { margin: 1.2rem 0 .45rem; }
+    .research-methods { margin-top: 2rem; scroll-margin-top: 1rem; }
+    .methods-heading { margin-bottom: .9rem; }
+    .methods-heading h3 { margin-bottom: .3rem; font: 400 clamp(1.45rem, 2.8vw, 1.9rem)/1.15 var(--serif); }
+    .method-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: .9rem; }
+    .method-card {
+      display: flex;
+      flex-direction: column;
+      min-width: 0;
+      padding: .9rem;
+      border: 1px solid var(--line);
+      border-top: 2px solid #b58c43;
+      border-radius: 4px;
+      background: #fffdf8;
+      scroll-margin-top: 1rem;
+    }
+    .method-card:target { border-color: #95671c; }
+    .method-card h4 { margin: 0 0 .75rem; font: 700 1.17rem/1.2 var(--serif); }
+    .method-card .method-topic { margin-bottom: .2rem; color: #78531d; font-size: .75rem; font-weight: 700; }
+    .method-card > p { margin-bottom: .7rem; font-size: .86rem; }
+    .method-card .paper-links { margin-top: auto; padding-top: .55rem; border-top: 1px solid var(--line); }
+    .method-figure { margin-bottom: .7rem; }
+    .method-preview { display: block; padding: .3rem .45rem; border: 1px solid var(--line); border-radius: 3px; background: #fff; }
+    .method-preview img { display: block; width: 100%; height: 9.25rem; object-fit: scale-down; }
+    .method-preview > span { display: block; margin-top: .2rem; text-align: right; font-size: .75rem; font-weight: 650; }
+    .method-figure figcaption { margin-top: .35rem; color: var(--muted); font-size: .8rem; }
+    .method-figure small { display: block; margin-top: .18rem; font-size: .72rem; }
+    .methods-archive { margin: 1.3rem 0 .45rem; }
+    .methods-archive h4 { margin: 0 0 .15rem; font-size: .95rem; }
+    .methods-archive p { font-size: .84rem; }
     .note-grid { align-items: start; }
     .research-note { min-width: 0; border-bottom: 1px solid var(--line); }
     .research-note summary { padding-block: .55rem; cursor: pointer; font-weight: 650; }
+    .research-note summary:hover { text-decoration: underline; text-underline-offset: .2em; }
     .research-note-body { padding: 0 0 .65rem; }
     .research-figure { margin: .75rem 0; }
     .research-figure img { display: block; max-width: 100%; height: auto; border: 1px solid var(--line); }
@@ -142,6 +172,10 @@
     .contact-grid { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: end; gap: .65rem 1rem; }
     .site-footer { padding-block: .75rem; background: var(--charcoal-deep); color: #ddd6de; font-size: .82rem; }
     .footer-inner { display: flex; justify-content: space-between; gap: .7rem; }
+    @media (max-width: 830px) {
+      .method-grid { grid-template-columns: 1fr; }
+      .method-preview img { height: clamp(9.25rem, 31vw, 14rem); }
+    }
     @media (max-width: 750px) {
       .wrap { width: calc(100% - 2.25rem); }
       .header-inner { flex-wrap: wrap; padding-block: .55rem; }
@@ -282,47 +316,72 @@
             <p>Mentored the team that placed sixth at the Aero India Student Pavilion in Bengaluru. Its quadcopter prototype combined deep learning and hybrid correlation filtering.</p>
           </article>
         </div>
-        <h3 class="section-subhead">Research methods and figures</h3>
+      </div>
+      <section class="wrap research-methods" id="research-methods" aria-labelledby="research-methods-heading">
+        <header class="methods-heading">
+          <h3 id="research-methods-heading">Research methods and figures</h3>
+          <p class="muted">Three studies, each with a figure that shows how the method works.</p>
+        </header>
+
+        <div class="method-grid">
+          <article class="method-card" id="method-hybrid-regression-quark-matter">
+            <header>
+              <p class="method-topic">Quark matter</p>
+              <h4>Mapping a phase boundary</h4>
+            </header>
+            <figure class="method-figure">
+              <a class="method-preview" href="assets/research/quark-matter-graphical-abstract.png" aria-label="Open full-size quark matter graphical abstract">
+                <img src="assets/research/quark-matter-graphical-abstract.png" alt="Four-stage workflow for classifying transition order and quark-matter phases, predicting transition temperatures and estimating the phase boundary" width="454" height="200" loading="lazy" decoding="async">
+                <span>Open full figure <span aria-hidden="true">→</span></span>
+              </a>
+              <figcaption><strong>Graphical abstract.</strong> Follow the four stages from identifying the transition order to estimating where the phase boundary lies.</figcaption>
+            </figure>
+            <p>SHAP guides feature selection for a Gaussian mixture model that helps distinguish crossovers from first-order transitions. Multilayer perceptrons classify phases and predict transition temperatures. Kernel ridge regression refines the estimated boundary.</p>
+            <p class="paper-links"><a href="#hybrid-regression-quark-matter">Publication details</a> <a href="https://doi.org/10.1016/j.jspc.2025.100247">Publisher article</a></p>
+          </article>
+
+          <article class="method-card" id="method-deep-facial-feature-fusion">
+            <header>
+              <p class="method-topic">Facial expression recognition</p>
+              <h4>Voting across VGG-19 layers</h4>
+            </header>
+            <figure class="method-figure">
+              <a class="method-preview" href="assets/research/deep-facial-feature-fusion-fig-1.png" aria-label="Open full-size facial feature fusion Figure 1">
+                <img src="assets/research/deep-facial-feature-fusion-fig-1.png" alt="Training and testing workflow showing four VGG-19 feature layers, subspace projection and maximum voting" width="782" height="445" loading="lazy" decoding="async">
+                <span>Open full figure <span aria-hidden="true">→</span></span>
+              </a>
+              <figcaption><strong>Figure 1.</strong> Trace how four sets of features from one face image lead to a single expression label.
+                <small>Panja et al., <cite>Procedia Computer Science</cite> (2025). <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/">CC BY-NC-ND 4.0</a>.</small>
+              </figcaption>
+            </figure>
+            <p>The method extracts features from layers 13–16 of a fine-tuned VGG-19. Principal component analysis reduces each feature set separately. The layer-specific predictions then vote on the expression label.</p>
+            <p class="paper-links"><a href="#deep-facial-feature-fusion">Publication details</a> <a href="papers/deep-facial-feature-fusion.pdf">Full paper (PDF)</a></p>
+          </article>
+
+          <article class="method-card" id="method-phase-autoencoders">
+            <header>
+              <p class="method-topic">Face recognition</p>
+              <h4>Matching faces in changing light</h4>
+            </header>
+            <figure class="method-figure">
+              <a class="method-preview" href="assets/research/phase-autoencoders-fig-2.png" aria-label="Open full-size phase-encoded correlation filtering Figure 2">
+                <img src="assets/research/phase-autoencoders-fig-2.png" alt="Block diagram of the phase-encoded autoencoder and correlation filter, with training arrows in blue and test arrows in red" width="686" height="711" loading="lazy" decoding="async">
+                <span>Open full figure <span aria-hidden="true">→</span></span>
+              </a>
+              <figcaption><strong>Figure 2.</strong> Blue arrows show training and red arrows show testing. At right, compare the correlation peaks for a match and a non-match.
+                <small>Banerjee, <cite>Springer LNCS</cite> 15324 (2025).</small>
+              </figcaption>
+            </figure>
+            <p>Cascaded autoencoders learn compact phase representations for class-specific correlation filters. Kernel density estimates of peak-to-sidelobe ratios provide adaptive decision thresholds.</p>
+            <p class="paper-links"><a href="#phase-autoencoders">Publication details</a> <a href="https://doi.org/10.1007/978-3-031-78383-8_12">Chapter at Springer</a></p>
+          </article>
+        </div>
+
+        <div class="methods-archive">
+          <h4>Earlier work in correlation filtering</h4>
+          <p class="muted">Expand a method to see its figures and publication.</p>
+        </div>
         <div class="note-grid">
-          <details class="research-note" id="method-hybrid-regression-quark-matter">
-            <summary>Hybrid regression for two-flavour quark matter</summary>
-            <div class="research-note-body">
-              <p>SHAP-guided feature selection and a Gaussian mixture model help distinguish crossover and first-order transitions. Multilayer perceptrons classify phases and predict transition temperatures. Kernel ridge regression refines the phase boundary.</p>
-              <p class="paper-links"><a href="#hybrid-regression-quark-matter">Publication details</a> <a href="https://doi.org/10.1016/j.jspc.2025.100247">Publisher article</a></p>
-              <figure class="research-figure">
-                <a href="assets/research/quark-matter-graphical-abstract.png" aria-label="Open full-size figure for Hybrid regression for two-flavour quark matter">
-                  <img src="assets/research/quark-matter-graphical-abstract.png" alt="Four-stage workflow for classifying transition order and quark-matter phases, predicting transition temperatures and estimating the phase boundary" width="454" height="200" loading="lazy" decoding="async">
-                </a>
-                <figcaption>Graphical abstract. From transition-order classification to phase-boundary estimation and identification of a possible second-order transition region.</figcaption>
-              </figure>
-            </div>
-          </details>
-          <details class="research-note" id="method-deep-facial-feature-fusion">
-            <summary>Deep facial feature fusion and voting</summary>
-            <div class="research-note-body">
-              <p>Four feature representations from fine-tuned VGG-19 layers are reduced using principal component analysis. The final expression label is chosen by voting across the layer-specific predictions.</p>
-              <p class="paper-links"><a href="#deep-facial-feature-fusion">Publication details</a> <a href="papers/deep-facial-feature-fusion.pdf">Full paper (PDF)</a></p>
-              <figure class="research-figure">
-                <a href="assets/research/deep-facial-feature-fusion-fig-1.png" aria-label="Open full-size figure for Deep facial feature fusion and voting">
-                  <img src="assets/research/deep-facial-feature-fusion-fig-1.png" alt="Training and testing workflow showing four VGG-19 feature layers, subspace projection and maximum voting" width="782" height="445" loading="lazy" decoding="async">
-                </a>
-                <figcaption>Figure 1. VGG-19 fine-tuning and the testing pipeline for seven- and eight-class facial expression recognition. Source: Panja et al., Procedia Computer Science (2025). <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/">CC BY-NC-ND 4.0</a>.</figcaption>
-              </figure>
-            </div>
-          </details>
-          <details class="research-note" id="method-phase-autoencoders">
-            <summary>Phase-encoded autoencoders and correlation filters</summary>
-            <div class="research-note-body">
-              <p>Cascaded autoencoders learn compact phase representations for class-specific correlation filters. Kernel density estimates of peak-to-sidelobe ratios set adaptive decision thresholds for recognising faces under changing illumination.</p>
-              <p class="paper-links"><a href="#phase-autoencoders">Publication details</a> <a href="https://doi.org/10.1007/978-3-031-78383-8_12">Chapter at Springer</a></p>
-              <figure class="research-figure">
-                <a href="assets/research/phase-autoencoders-fig-2.png" aria-label="Open full-size figure for Phase-encoded autoencoders and correlation filters">
-                  <img src="assets/research/phase-autoencoders-fig-2.png" alt="Block diagram of the phase-encoded autoencoder and correlation filter, with training arrows in blue and test arrows in red" width="686" height="711" loading="lazy" decoding="async">
-                </a>
-                <figcaption>Figure 2. Training and testing stages of the phase-encoded correlation filter. Source: Banerjee, Springer LNCS 15324 (2025).</figcaption>
-              </figure>
-            </div>
-          </details>
           <details class="research-note">
             <summary>Unconstrained video filtering for face localisation</summary>
             <div class="research-note-body">
@@ -394,7 +453,7 @@
             </div>
           </details>
         </div>
-      </div>
+      </section>
     </section>
 
     <section class="section" id="selected-papers" aria-labelledby="selected-papers-heading">
@@ -845,11 +904,6 @@
 
     function revealLinkedContent() {
       const publication = document.getElementById(location.hash.slice(1));
-      if (publication?.matches('details.research-note')) {
-        publication.open = true;
-        publication.scrollIntoView();
-        return;
-      }
       if (!publication?.matches('.publication-list li')) return;
       if (publication.hidden) {
         if (publications.indexOf(publication) >= previewCount) expanded = true;
