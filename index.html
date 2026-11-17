@@ -82,6 +82,8 @@
     .tool-grid .tool-card img { height: auto; aspect-ratio: 2 / 1; }
     .tool-card:hover h4, .tool-card:focus-visible h4 { text-decoration: underline; }
     .tool-note { color: var(--muted); font-size: .82rem; }
+    .teaching-tools > .tool-card { display: block; margin-top: .85rem; padding: .65rem .85rem; border: 1px solid var(--line); border-radius: 4px; text-decoration: none; }
+    .teaching-tools > .tool-card h4 { margin-top: 0; }
     .paper-card img { display: block; width: 100%; aspect-ratio: 2 / 1; object-fit: contain; background: #fff; border: 1px solid var(--line); border-radius: 4px; }
     .paper-card h3, .tool-card h4 { margin: .6rem 0 .33rem; font: 700 1.14rem/1.22 var(--serif); }
     .paper-card h3 a { text-decoration: none; }
@@ -772,7 +774,7 @@
         <section id="interactive-tools" class="teaching-tools" aria-labelledby="interactive-tools-heading">
           <div class="heading-row">
             <h3 id="interactive-tools-heading">Interactive tools</h3>
-            <span class="tool-note">Student sign-in required</span>
+            <span class="tool-note">Student sign-in required for course tools</span>
           </div>
         <div class="paper-grid tool-grid">
           <a class="paper-card tool-card" href="https://pbacademic-teaching.pradiptak-banerjee.workers.dev/teaching/materials/interactive-tools/k-means.html">
@@ -797,6 +799,13 @@
             </div>
           </a>
         </div>
+          <a class="paper-card tool-card" href="https://cs.stanford.edu/people/karpathy/convnetjs/">
+            <div class="heading-row">
+              <h4>ConvNetJS</h4>
+              <span class="tool-note">Public demos</span>
+            </div>
+            <p class="muted">Explore neural networks through browser demos for digit recognition, image classification and 2D data.</p>
+          </a>
         </section>
         <ul class="course-grid">
           <li>
