@@ -82,8 +82,12 @@
     .tool-grid .tool-card img { height: auto; aspect-ratio: 2 / 1; }
     .tool-card:hover h4, .tool-card:focus-visible h4 { text-decoration: underline; }
     .tool-note { color: var(--muted); font-size: .82rem; }
-    .teaching-tools > .tool-card { display: block; margin-top: .85rem; padding: .65rem .85rem; border: 1px solid var(--line); border-radius: 4px; text-decoration: none; }
-    .teaching-tools > .tool-card h4 { margin-top: 0; }
+    .public-demos { margin-top: .85rem; }
+    .public-demos h4 { margin: 0 0 .35rem; font-size: .88rem; }
+    .public-demo-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .65rem; }
+    .public-demo-grid .tool-card { display: block; padding: .65rem .85rem; border: 1px solid var(--line); border-radius: 4px; text-decoration: none; }
+    .public-demo-grid h5 { margin: 0 0 .3rem; font: 700 1.14rem/1.22 var(--serif); }
+    .public-demo-grid .tool-card:hover h5, .public-demo-grid .tool-card:focus-visible h5 { text-decoration: underline; }
     .paper-card img { display: block; width: 100%; aspect-ratio: 2 / 1; object-fit: contain; background: #fff; border: 1px solid var(--line); border-radius: 4px; }
     .paper-card h3, .tool-card h4 { margin: .6rem 0 .33rem; font: 700 1.14rem/1.22 var(--serif); }
     .paper-card h3 a { text-decoration: none; }
@@ -193,7 +197,7 @@
       .paper-grid, .project-grid, .note-grid, .about-grid { grid-template-columns: 1fr; }
       .paper-card { display: grid; grid-template-columns: 32% minmax(0, 1fr); align-items: start; gap: .75rem; }
       .paper-card img, .paper-illustration, img.paper-illustration { aspect-ratio: 4 / 3; }
-      .tool-grid { grid-template-columns: 1fr; }
+      .tool-grid, .public-demo-grid { grid-template-columns: 1fr; }
       .tool-card h4 { margin-top: .6rem; }
       .paper-card h3 { margin-top: 0; }
       .course-banner { min-height: 4.8rem; padding: .45rem .55rem; }
@@ -799,13 +803,19 @@
             </div>
           </a>
         </div>
-          <a class="paper-card tool-card" href="https://cs.stanford.edu/people/karpathy/convnetjs/">
-            <div class="heading-row">
-              <h4>ConvNetJS</h4>
-              <span class="tool-note">Public demos</span>
+          <section class="public-demos" aria-labelledby="public-demos-heading">
+            <h4 id="public-demos-heading">Public demos</h4>
+            <div class="public-demo-grid">
+              <a class="paper-card tool-card" href="https://cs.stanford.edu/people/karpathy/convnetjs/">
+                <h5>ConvNetJS</h5>
+                <p class="muted">Explore neural networks through browser demos for digit recognition, image classification and 2D data.</p>
+              </a>
+              <a class="paper-card tool-card" href="https://playground.tensorflow.org/">
+                <h5>TensorFlow Playground</h5>
+                <p class="muted">Change the hidden layers, activation function and learning rate, then watch how the decision boundary and loss change during training.</p>
+              </a>
             </div>
-            <p class="muted">Explore neural networks through browser demos for digit recognition, image classification and 2D data.</p>
-          </a>
+          </section>
         </section>
         <ul class="course-grid">
           <li>
